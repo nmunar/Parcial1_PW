@@ -1,0 +1,41 @@
+
+@font-face {
+    font-family: "Satisfy";
+    src: url(assets/letra.ttf);
+  }
+header{
+  font-family: "Satisfy";
+  display:flex;
+  flex-direction:column;
+
+}
+#top{
+    display:flex;
+    justify-content: space-between;
+}
+#down{
+    display:flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#barra{
+    display:flex;
+    padding-top: 15px;
+    padding-bottom:15px;
+}
+
+footer {
+    display:flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    /**
+    Suferencias de modificacion de código
+    */
+    padding:10px;
+  }
+
+
