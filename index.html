@@ -39,50 +39,92 @@
     <header class="container">
       <div id="top">
         <h1>Restaurant & Lounge</h1>
-        <img
-          src="/assets/carrito.png"
-          width="50"
-          height="50"
-          alt="Carito de compras"
-        />
+        <div id="car">
+          <img
+            src="/assets/carrito.png"
+            width="50"
+            height="50"
+            alt="Carito de compras"
+            id="carritoC"
+          />
+          <div id = "cantProd">0 items</div>
+        </div>
       </div>
-      <div class="card"id="down">
+      <div class="card" id="down">
         <img src="/assets/logo.png" alt="Logo" />
       </div>
     </header>
     <main class="container">
-        <div class="card" id="barra">
-      <nav class="navbar navbar-expand-lg navbar-dark scrolling-navbar bg-dark" id="barra">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#burgues">Burgues</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#tacos">Tacos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#salads">Salads</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#desserts">Desserts</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#drinksas">Drinks and Sides</a>
+      <div class="card" id="barra">
+        <nav
+          class="navbar navbar-expand-lg navbar-dark scrolling-navbar bg-dark"
+          id="barra"
+        >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarToggleExternalContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" id="b" href="#burgues">Burgues</a>
               </li>
-          </ul>
-        </div>
+              <li class="nav-item">
+                <a class="nav-link" id="t" href="#tacos">Tacos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="s" href="#salads">Salads</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="d" href="#desserts">Desserts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="dys" href="#drinksas"
+                  >Drinks and Sides</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
 
-        <div class="card" id="contenido">
-            
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title" id="titulo"></h1>
         </div>
+      </div>
+      <div id="relleno"></div>
+      <div
+        class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4"
+        id="contenido"
+      ></div>
+      <div>
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th id="item" scope="col"></th>
+              <th id="qty" scope="col"></th>
+              <th id="description" scope="col"></th>
+              <th id="unitplace" scope="col"></th>
+              <th id="amount" scope="col"></th>
+            </tr>
+          </thead>
+          <tbody id="contenidoTabla"></tbody>
+        </table>
+        <div  id="form1"></div>
     </main>
+
     <footer>
-        <p>Contact us: +57 3102105253 - info@restaurant.com - @restaurant</p>
+      <p id="fot">
+        Contact us: +57 3102105253 - info@restaurant.com - @restaurant
+      </p>
     </footer>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script
