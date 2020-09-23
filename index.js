@@ -114,7 +114,7 @@ let processPedidos = (data) => {
     let desc = info[1];
     let price = parseFloat(info[2]);
     let acum = parseFloat(info[3]);
-    tot+=acum;
+    tot += acum;
     str += `<tr>
     <td>${sorted[i].name}</td>
     <td>${cant}</td>
@@ -124,7 +124,7 @@ let processPedidos = (data) => {
     </tr>`;
   }
   document.getElementById("contenidoTabla").innerHTML = str;
-  document.getElementById("total").innerHTML = "Total: $"+tot ;
+  document.getElementById("total").innerHTML = "Total: $" + tot;
 };
 
 document.getElementById("b").addEventListener("click", () => {
@@ -160,10 +160,20 @@ document.getElementById("carritoC").addEventListener("click", () => {
   document.getElementById("amount").innerHTML = "Amount";
   document.getElementById("form1").innerHTML = `<h1 id = "total">Total: 0</h1>
     <div class="row-cols" id="form2">
-      <div class="col"><button type="button" class="btn btn-danger">Cancel</button></div>
+      <div class="col"><button id="butBorr" type="button" class="btn btn-danger">Cancel</button></div>
       <div class="col"></div><button type="button" class="btn btn-warning">Confirm Order</button></div>
     </div>
   </div>`;
   document.getElementById("titulo").innerHTML = "Oreder detail";
   processPedidos(pedido);
+
+  document.getElementById("butBorr").addEventListener("click", () => {
+    $("#modalConfirmDelete").modal("show");
+
+    document.getElementById("borrar").addEventListener("click", () => {
+      document.getElementById("contenidoTabla").innerHTML = "";
+      document.getElementById("cantProd").innerHTML = "0 items";
+      document.getElementById("total").innerHTML = "Total: 0";
+    });
+  });
 });

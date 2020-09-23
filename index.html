@@ -118,7 +118,53 @@
           </thead>
           <tbody id="contenidoTabla"></tbody>
         </table>
-        <div  id="form1"></div>
+        <div  id="form1" >
+            
+        </div>
+
+
+            <!--Modal: modalConfirmDelete-->
+    <div
+    class="modal fade"
+    id="modalConfirmDelete"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div
+      class="modal-dialog modal-sm modal-notify modal-danger"
+      role="document"
+    >
+      <!--Content-->
+      <div class="modal-content text-center">
+        <!--Body-->
+        <div class="modal-body">
+          <p class="heading">¿Esta seguro de que quiere borrar todo?</p>
+        </div>
+        <!--Footer-->
+        <div class="modal-footer flex-center">
+          <a
+            type="button"
+            class="btn btn-danger waves-effect"
+            data-dismiss="modal"
+            >No</a
+          >
+          <a
+            id="borrar"
+            type="button"
+            class="btn btn-danger waves-effect"
+            data-dismiss="modal"
+            >Si</a
+          >
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+  <!--Modal: modalConfirmDelete-->
+
+
     </main>
 
     <footer>
