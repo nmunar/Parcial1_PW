@@ -10,6 +10,7 @@ let infotemp = new Map();
 let arrayDef = [];
 let noItem = 0;
 let sorted = [];
+let entro = 0;
 fetch(url)
   .then((response) => response.json())
   .then((data) => {
@@ -37,6 +38,7 @@ let process = (data) => {
   document.getElementById("contenido").innerHTML = str;
   if (act == true && op == 0) {
     act = false;
+
     document.getElementById("item").innerHTML = "";
     document.getElementById("qty").innerHTML = "";
     document.getElementById("description").innerHTML = "";
@@ -126,22 +128,27 @@ let processPedidos = (data) => {
 document.getElementById("b").addEventListener("click", () => {
   process(datos[0].products);
   document.getElementById("titulo").innerHTML = datos[0].name;
+  document.getElementById("contenidoTabla").innerHTML = "";
 });
 document.getElementById("t").addEventListener("click", () => {
   process(datos[1].products);
   document.getElementById("titulo").innerHTML = datos[1].name;
+  document.getElementById("contenidoTabla").innerHTML = "";
 });
 document.getElementById("s").addEventListener("click", () => {
   process(datos[2].products);
   document.getElementById("titulo").innerHTML = datos[2].name;
+  document.getElementById("contenidoTabla").innerHTML = "";
 });
 document.getElementById("d").addEventListener("click", () => {
   process(datos[3].products);
   document.getElementById("titulo").innerHTML = datos[3].name;
+  document.getElementById("contenidoTabla").innerHTML = "";
 });
 document.getElementById("dys").addEventListener("click", () => {
   process(datos[4].products);
   document.getElementById("titulo").innerHTML = datos[4].name;
+  document.getElementById("contenidoTabla").innerHTML = "";
 });
 document.getElementById("carritoC").addEventListener("click", () => {
   op = 0;
@@ -168,6 +175,7 @@ document.getElementById("carritoC").addEventListener("click", () => {
 
     document.getElementById("borrar").addEventListener("click", () => {
       document.getElementById("contenidoTabla").innerHTML = "";
+
       document.getElementById("cantProd").innerHTML = "0 items";
       document.getElementById("total").innerHTML = "Total: 0";
     });
