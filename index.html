@@ -131,32 +131,40 @@
     role="dialog"
     aria-labelledby="exampleModalLabel"
     aria-hidden="true"
-  >
+  ><div class="modal-content"></div>
     <div
-      class="modal-dialog modal-sm modal-notify modal-danger"
+      class="modal-dialog modal-md modal-notify modal-danger"
       role="document"
     >
-      <!--Content-->
+     <!--Content-->
       <div class="modal-content text-center">
+    <!--header-->
+    <div class="modal-header">
+        <h5 class="modal-title">Cancel the order</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+     
         <!--Body-->
         <div class="modal-body">
-          <p class="heading">¿Esta seguro de que quiere borrar todo?</p>
+          <p class="heading">Are you sure about cancelling the order?</p>
         </div>
         <!--Footer-->
-        <div class="modal-footer flex-center">
-          <a
-            type="button"
-            class="btn btn-danger waves-effect"
-            data-dismiss="modal"
-            >No</a
-          >
+        <div class="modal-footer flex-center" id="modalbuts">
           <a
             id="borrar"
             type="button"
-            class="btn btn-danger waves-effect"
+            class="btn btn-success waves-effect"
             data-dismiss="modal"
-            >Si</a
+            >Yes, I want to cancel the order</a
           >
+          <a
+          type="button"
+          class="btn btn-danger waves-effect"
+          data-dismiss="modal"
+          >No, I want to continue adding products</a
+        >
         </div>
       </div>
       <!--/.Content-->

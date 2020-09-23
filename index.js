@@ -9,7 +9,7 @@ let cantProd = 0;
 let infotemp = new Map();
 let arrayDef = [];
 let noItem = 0;
-let sorted=[];
+let sorted = [];
 fetch(url)
   .then((response) => response.json())
   .then((data) => {
@@ -174,21 +174,20 @@ document.getElementById("carritoC").addEventListener("click", () => {
   });
 
   document.getElementById("butConfirm").addEventListener("click", () => {
-    let confim=[];  
+    let confim = [];
     for (let i = 0; i < sorted.length; i++) {
-          const element = sorted[i];
-          let info = element.value.split("/");
-          let cant = parseInt(info[0]);
-          let desc = info[1];
-          let price = parseFloat(info[2]);
-          confim.push({
-            item: element.name,
-            quantity: cant,
-            description: desc,
-            unitprice:price
-          });
-      }
-     console.log(confim);
+      const element = sorted[i];
+      let info = element.value.split("/");
+      let cant = parseInt(info[0]);
+      let desc = info[1];
+      let price = parseFloat(info[2]);
+      confim.push({
+        item: element.name,
+        quantity: cant,
+        description: desc,
+        unitprice: price,
+      });
+    }
+    console.log(confim);
   });
-
 });
