@@ -43,6 +43,7 @@ let process = (data) => {
     document.getElementById("amount").innerHTML = "";
     document.getElementById("form1").innerHTML = "";
     document.getElementById("titulo").innerHTML = "";
+    document.getElementById("contenidoTabla").innerHTML = "";
     op = 1;
   }
   act = true;
@@ -64,7 +65,7 @@ let add_car = (item) => {
         " " +
         iformacionPedido.price +
         " " +
-        cantProd
+        1
     );
   } else {
     // cantProd -= 1;
@@ -106,12 +107,14 @@ let processPedidos = (data) => {
   console.log(sorted);
 
   let str = "";
+  let tot = 0;
   for (let i = 0; i < sorted.length; i++) {
     let info = sorted[i].value.split("/");
     let cant = parseInt(info[0]);
     let desc = info[1];
     let price = parseFloat(info[2]);
     let acum = parseFloat(info[3]);
+    tot+=acum;
     str += `<tr>
     <td>${sorted[i].name}</td>
     <td>${cant}</td>
@@ -121,6 +124,7 @@ let processPedidos = (data) => {
     </tr>`;
   }
   document.getElementById("contenidoTabla").innerHTML = str;
+  document.getElementById("total").innerHTML = "Total: $"+tot ;
 };
 
 document.getElementById("b").addEventListener("click", () => {
@@ -154,7 +158,7 @@ document.getElementById("carritoC").addEventListener("click", () => {
   document.getElementById("description").innerHTML = "Description";
   document.getElementById("unitplace").innerHTML = "Unit Price";
   document.getElementById("amount").innerHTML = "Amount";
-  document.getElementById("form1").innerHTML = `<h1>Total:</h1>
+  document.getElementById("form1").innerHTML = `<h1 id = "total">Total: 0</h1>
     <div class="row-cols" id="form2">
       <div class="col"><button type="button" class="btn btn-danger">Cancel</button></div>
       <div class="col"></div><button type="button" class="btn btn-warning">Confirm Order</button></div>
