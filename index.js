@@ -9,6 +9,7 @@ let cantProd = 0;
 let infotemp = new Map();
 let arrayDef = [];
 let noItem = 0;
+let sorted=[];
 fetch(url)
   .then((response) => response.json())
   .then((data) => {
@@ -82,9 +83,6 @@ let add_car = (item) => {
       itemNo + " " + price + " " + acum + " " + cant
     );
   }
-  console.log(pedido);
-
-  // infotemp = null;
 };
 
 let processPedidos = (data) => {
@@ -100,11 +98,9 @@ let processPedidos = (data) => {
       value: cant + "/" + key + "/" + price + "/" + acum,
     });
   }
-  var sorted = arrayDef.sort(function (a, b) {
+  sorted = arrayDef.sort(function (a, b) {
     return a.name < b.name ? 1 : b.name > a.name ? -1 : 0;
   });
-
-  console.log(sorted);
 
   let str = "";
   let tot = 0;
@@ -161,7 +157,7 @@ document.getElementById("carritoC").addEventListener("click", () => {
   document.getElementById("form1").innerHTML = `<h1 id = "total">Total: 0</h1>
     <div class="row-cols" id="form2">
       <div class="col"><button id="butBorr" type="button" class="btn btn-danger">Cancel</button></div>
-      <div class="col"></div><button type="button" class="btn btn-warning">Confirm Order</button></div>
+      <div class="col"></div><button id="butConfirm" type="button" class="btn btn-warning">Confirm Order</button></div>
     </div>
   </div>`;
   document.getElementById("titulo").innerHTML = "Oreder detail";
@@ -176,4 +172,23 @@ document.getElementById("carritoC").addEventListener("click", () => {
       document.getElementById("total").innerHTML = "Total: 0";
     });
   });
+
+  document.getElementById("butConfirm").addEventListener("click", () => {
+    let confim=[];  
+    for (let i = 0; i < sorted.length; i++) {
+          const element = sorted[i];
+          let info = element.value.split("/");
+          let cant = parseInt(info[0]);
+          let desc = info[1];
+          let price = parseFloat(info[2]);
+          confim.push({
+            item: element.name,
+            quantity: cant,
+            description: desc,
+            unitprice:price
+          });
+      }
+     console.log(confim);
+  });
+
 });
